@@ -26,6 +26,22 @@ export default function SiteHeader() {
     setIsMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsMobileOpen(false);
+      }
+    };
+
+    document.body.classList.toggle("nav-open", isMobileOpen);
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.classList.remove("nav-open");
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMobileOpen]);
+
   const isActive = (href) => {
     if (href === "/") {
       return pathname === "/";
