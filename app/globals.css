@@ -64,6 +64,7 @@ main {
 .container {
   width: min(1160px, calc(100% - 2rem));
   margin: 0 auto;
+  z-index: 1;
 }
 
 .section {
@@ -1083,6 +1084,10 @@ p {
   .hero {
     min-height: auto;
     padding-bottom: 4rem;
+  }
+
+  .hero__panel {
+    justify-self: start;
   }
 
   .hero__grid,

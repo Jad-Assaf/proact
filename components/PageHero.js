@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Reveal from "./Reveal";
 
 export default function PageHero({
   eyebrow,
@@ -24,11 +23,11 @@ export default function PageHero({
         </div>
       ) : null}
       <div className="container">
-        <Reveal className="page-hero__content">
+        <div className="page-hero__content">
           {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
           <h1>{title}</h1>
           {description ? <p>{description}</p> : null}
-        </Reveal>
+        </div>
       </div>
     </section>
   );
