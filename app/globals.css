@@ -181,7 +181,8 @@ p {
   border-color: rgba(255, 248, 239, 0.22);
   background: rgba(255, 255, 255, 0.06);
   color: inherit;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
 }
 
 .button--small {
@@ -486,7 +487,7 @@ p {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  z-index: -2;
+  z-index: 0;
 }
 
 .hero__backdrop::after,
@@ -509,6 +510,8 @@ p {
 }
 
 .hero__grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 2rem;
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
@@ -540,8 +543,6 @@ p {
   width: min(100%, 24rem);
 }
 
-.hero__stat-card,
-.hero__note,
 .service-card,
 .value-card,
 .quote-card,
@@ -560,13 +561,20 @@ p {
   box-shadow: var(--shadow);
 }
 
+.hero__stat-card,
+.hero__note {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 252, 247, 0.12);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--shadow);
+}
+
 .hero__stat-card {
   display: grid;
   gap: 0.25rem;
   padding: 1.5rem;
-  background: rgba(255, 252, 247, 0.12);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
 }
 
 .hero__stat-card--accent {
@@ -589,9 +597,6 @@ p {
 
 .hero__note {
   padding: 1.35rem 1.5rem;
-  background: rgba(255, 252, 247, 0.12);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
 }
 
 .hero__note p {
@@ -994,7 +999,7 @@ p {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translate3d(0, 28px, 0);
   will-change: opacity, transform;
   transition:
     opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -1003,7 +1008,19 @@ p {
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  will-change: auto;
+}
+
+.reveal--opacity {
+  transform: none;
+  will-change: opacity;
+  transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal--opacity.is-visible {
+  transform: none;
+  will-change: auto;
 }
 
 @keyframes marquee {
@@ -1054,7 +1071,12 @@ p {
   }
 
   .reveal {
-    transform: translateY(18px);
+    transform: translate3d(0, 18px, 0);
+    transition-duration: 760ms;
+  }
+
+  .reveal--opacity {
+    transform: none;
     transition-duration: 760ms;
   }
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../components/Reveal";
+import RevealOpacity from "../components/RevealOpacity";
 import LogoMarquee from "../components/LogoMarquee";
 import {
   approach,
@@ -31,16 +32,18 @@ export default function HomePage() {
           />
         </div>
         <div className="container hero__grid">
-          <Reveal className="stack stack--lg">
-            <span className="eyebrow">Strategic Holistic Activations</span>
-            <h1 className="hero__title">
-              Brand systems that move people, not just metrics.
-            </h1>
-            <p className="hero__copy">
-              ProAct helps ambitious brands in Oman and beyond sharpen their
-              positioning, build memorable identities, and activate customer
-              relationships with precision.
-            </p>
+          <div className="stack stack--lg">
+            <RevealOpacity className="stack stack--lg">
+              <span className="eyebrow">Strategic Holistic Activations</span>
+              <h1 className="hero__title">
+                Brand systems that move people, not just metrics.
+              </h1>
+              <p className="hero__copy">
+                ProAct helps ambitious brands in Oman and beyond sharpen their
+                positioning, build memorable identities, and activate customer
+                relationships with precision.
+              </p>
+            </RevealOpacity>
             <div className="hero__actions">
               <Link className="button button--solid" href="/services">
                 Explore services
@@ -49,8 +52,8 @@ export default function HomePage() {
                 Start a project
               </Link>
             </div>
-          </Reveal>
-          <Reveal className="hero__panel" delay={120}>
+          </div>
+          <div className="hero__panel">
             <div className="hero__stat-card">
               <span className="hero__stat-value">40+</span>
               <span className="hero__stat-label">years of combined expertise</span>
@@ -62,7 +65,7 @@ export default function HomePage() {
             <div className="hero__note">
               <p>From brand health to activation, every move is designed to map back to business goals.</p>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
