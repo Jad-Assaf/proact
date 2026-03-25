@@ -10,6 +10,9 @@ export default function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
+  const headerLogo = isScrolled
+    ? "/assets/images/logo/logo-dark.png"
+    : "/assets/images/logo/logo-light.png";
 
   useEffect(() => {
     const updateHeaderState = () => {
@@ -56,7 +59,7 @@ export default function SiteHeader() {
         <div className="site-header__inner">
           <Link className="brand-mark" href="/">
             <Image
-              src="/assets/images/logo/logo-dark.png"
+              src={headerLogo}
               alt="ProAct"
               width={124}
               height={43}
