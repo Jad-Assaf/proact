@@ -55,15 +55,18 @@ export default function HomePage() {
           </div>
           <div className="hero__panel">
             <div className="hero__stat-card">
-              <span className="hero__stat-value">40+</span>
-              <span className="hero__stat-label">years of combined expertise</span>
+              <span className="hero__stat-value">75+</span>
+              <span className="hero__stat-label">
+                Years of combined expertise
+              </span>
             </div>
             <div className="hero__stat-card hero__stat-card--accent">
-              <span className="hero__stat-value">4</span>
-              <span className="hero__stat-label">core service pillars</span>
+              <span className="hero__stat-value">10+</span>
+              <span className="hero__stat-label">Years operating in Oman</span>
             </div>
             <div className="hero__note">
-              <p>From brand health to activation, every move is designed to map back to business goals.</p>
+              <span className="hero__stat-value">10+</span>
+              <p>Countries Served across GCC & Beyond.</p>
             </div>
           </div>
         </div>
@@ -115,7 +118,8 @@ export default function HomePage() {
             </h2>
             <p className="lede">
               We build brands with a clear line from insight to activation, so
-              communication, design, and delivery all point in the same direction.
+              communication, design, and delivery all point in the same
+              direction.
             </p>
             <div className="feature-list">
               {differentiators.map((item, index) => (
@@ -140,7 +144,11 @@ export default function HomePage() {
           </Reveal>
           <div className="approach-grid">
             {approach.map((step, index) => (
-              <Reveal key={step.title} className="approach-card" delay={index * 80}>
+              <Reveal
+                key={step.title}
+                className="approach-card"
+                delay={index * 80}
+              >
                 <span className="approach-card__index">
                   {(index + 1).toString().padStart(2, "0")}
                 </span>
@@ -166,11 +174,17 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Testimonials</span>
-            <h2>Clients stay because the work is strategic and the output lands.</h2>
+            <h2>
+              Clients stay because the work is strategic and the output lands.
+            </h2>
           </Reveal>
           <div className="testimonial-grid">
             {testimonials.map((item, index) => (
-              <Reveal key={item.author} className="quote-card" delay={index * 110}>
+              <Reveal
+                key={item.author}
+                className="quote-card"
+                delay={index * 110}
+              >
                 <p>{item.quote}</p>
                 <div className="quote-card__meta">
                   <strong>{item.author}</strong>
@@ -186,11 +200,14 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="cta-banner">
             <div>
-              <span className="eyebrow">Global perspective, local understanding</span>
+              <span className="eyebrow">
+                Global perspective, local understanding
+              </span>
               <h2>Inspiration has no border.</h2>
               <p>
                 ProAct brings Oman market fluency together with international
-                strategic thinking to build brands that feel distinct and durable.
+                strategic thinking to build brands that feel distinct and
+                durable.
               </p>
             </div>
             <Link className="button button--solid" href="/contacts">

@@ -765,9 +765,10 @@ p {
 .logo-pill {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.85rem;
   min-width: 16rem;
-  padding: 1rem 1.1rem;
+  padding: 0rem 1.1rem;
   border: 0;
   background: #ffffff;
   box-shadow:
@@ -776,9 +777,9 @@ p {
 }
 
 .logo-pill img {
-  width: 3.5rem;
-  height: 3.5rem;
-  object-fit: contain;
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: fill;
 }
 
 .testimonial-grid {
