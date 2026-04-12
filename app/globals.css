@@ -75,6 +75,10 @@ main {
   padding-top: 2rem;
 }
 
+.section--pt-0 {
+  padding-top: 0;
+}
+
 .section--contrast {
   background: var(--bg-alt);
 }
@@ -647,6 +651,12 @@ p {
   justify-content: center;
 }
 
+.section-copy-center {
+  max-width: 58rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
 .service-grid,
 .value-grid,
 .approach-grid,
@@ -655,6 +665,12 @@ p {
 .contact-grid {
   display: grid;
   gap: 1.25rem;
+}
+
+.problem-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .service-grid {
@@ -774,6 +790,31 @@ p {
   padding: 1.5rem;
   border-color: rgba(20, 32, 41, 0.08);
   background: #fffaf3;
+}
+
+.problem-card {
+  gap: 0.65rem;
+}
+
+.problem-card p {
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.score-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.45rem;
+}
+
+.approach-grid.score-grid {
+  overflow-y: hidden;
+}
+
+.score-card p {
+  overflow-wrap: anywhere;
 }
 
 .logo-marquee {
@@ -1073,6 +1114,7 @@ p {
 
 @media (max-width: 1080px) {
   .service-grid,
+  .problem-grid,
   .value-grid,
   .testimonial-grid,
   .method-grid {
@@ -1081,6 +1123,15 @@ p {
 
   .approach-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1081px) {
+  .score-grid {
+    width: max-content;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(21rem, 21rem);
   }
 }
 
@@ -1121,6 +1172,7 @@ p {
   .hero__grid,
   .split,
   .site-footer__grid,
+  .problem-grid,
   .service-grid,
   .value-grid,
   .approach-grid,

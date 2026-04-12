@@ -7,6 +7,8 @@ const serviceList = Object.values(services);
 
 export const metadata = {
   title: "Services",
+  description:
+    "Explore ProAct services across brand health, strategy, development, and activations built to improve clarity, consistency, and growth.",
 };
 
 export default function ServicesPage() {

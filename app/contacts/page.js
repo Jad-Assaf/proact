@@ -4,6 +4,8 @@ import { company } from "../../content/siteData";
 
 export const metadata = {
   title: "Contact",
+  description:
+    "Contact ProAct Oman to discuss brand strategy, rebranding, activation planning, and communication systems aligned to business goals.",
 };
 
 export default function ContactsPage() {

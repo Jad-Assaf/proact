@@ -17,7 +17,7 @@ export default function PageHero({
             alt={imageAlt}
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 1200px) 1200px, 100vw"
             className="page-hero__image"
           />
         </div>

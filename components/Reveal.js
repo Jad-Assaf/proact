@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { observeReveal } from "./revealObserver";
 
 export default function Reveal({
   as: Tag = "div",
@@ -17,19 +18,14 @@ export default function Reveal({
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          node.classList.add("is-visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.18 },
-    );
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      node.classList.add("is-visible");
+      return undefined;
+    }
 
-    observer.observe(node);
-
-    return () => observer.disconnect();
+    return observeReveal(node, () => {
+      node.classList.add("is-visible");
+    });
   }, []);
 
   return (

@@ -15,14 +15,33 @@ export default function SiteHeader() {
     : "/assets/images/logo/logo-light.png";
 
   useEffect(() => {
+    let rafId = null;
+
     const updateHeaderState = () => {
-      setIsScrolled(window.scrollY > 24);
+      const nextIsScrolled = window.scrollY > 24;
+      setIsScrolled((previous) =>
+        previous === nextIsScrolled ? previous : nextIsScrolled,
+      );
+      rafId = null;
+    };
+
+    const onScroll = () => {
+      if (rafId !== null) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(updateHeaderState);
     };
 
     updateHeaderState();
-    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", updateHeaderState);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -64,6 +83,7 @@ export default function SiteHeader() {
               width={124}
               height={43}
               priority
+              sizes="124px"
             />
           </Link>
           <nav className="site-nav" aria-label="Primary">
@@ -109,7 +129,7 @@ export default function SiteHeader() {
               alt="ProAct"
               width={112}
               height={39}
-              priority
+              sizes="112px"
             />
           </Link>
           <button

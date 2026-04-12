@@ -3,7 +3,13 @@ import Image from "next/image";
 function LogoSet({ logos }) {
   return logos.map((logo) => (
     <div className="logo-pill" key={`${logo.name}-${logo.src}`}>
-      <Image src={logo.src} alt={logo.name} width={150} height={96} />
+      <Image
+        src={logo.src}
+        alt={logo.name}
+        width={200}
+        height={128}
+        sizes="200px"
+      />
       {/* <span>{logo.name}</span> */}
     </div>
   ));

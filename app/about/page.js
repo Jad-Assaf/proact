@@ -4,6 +4,8 @@ import { beliefs, faqs } from "../../content/siteData";
 
 export const metadata = {
   title: "About",
+  description:
+    "Learn how ProAct helps brands in Oman connect strategy, communication, and activation to drive measurable business impact.",
 };
 
 export default function AboutPage() {

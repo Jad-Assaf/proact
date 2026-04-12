@@ -5,6 +5,7 @@ import PageHero from "../../../components/PageHero";
 import { services } from "../../../content/siteData";
 
 const serviceList = Object.values(services);
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return serviceList.map((service) => ({ slug: service.slug }));

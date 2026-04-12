@@ -12,6 +12,7 @@ export default function SiteFooter() {
             alt="ProAct"
             width={158}
             height={56}
+            sizes="158px"
           />
           <p>
             We craft personalized brand strategies and experiences that connect
