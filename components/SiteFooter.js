@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { company, navigation } from "../content/siteData";
+import { company, navigation, services } from "../content/siteData";
+
+const serviceLinks = Object.values(services).map((service) => ({
+  href: `/services/${service.slug}`,
+  label: service.pageName,
+}));
 
 export default function SiteFooter() {
   return (
@@ -23,6 +28,16 @@ export default function SiteFooter() {
           <h3>Navigation</h3>
           <div className="footer-links">
             {navigation.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="stack">
+          <h3>Services</h3>
+          <div className="footer-links">
+            {serviceLinks.map((item) => (
               <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>

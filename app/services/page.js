@@ -1,23 +1,158 @@
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
 import PageHero from "../../components/PageHero";
-import { services } from "../../content/siteData";
 
-const serviceList = Object.values(services);
+const serviceStages = [
+  {
+    id: "audit",
+    eyebrow: "STAGE 1: AUDIT",
+    title: "Understand Where You Stand",
+    intro:
+      "Before you invest more in marketing, you need to know what is actually working and what is quietly holding you back. Most companies don't realize their brand has a clarity problem until growth slows. We help you see it before that happens.",
+    services: [
+      {
+        title: "Brand Health Check",
+        href: "/services/brand-health",
+        description:
+          "A structured, honest review of your brand as it exists today. We look at every layer from how customers perceive you to how your teams represent you to give you clear, prioritized recommendations you can act on immediately.",
+        buildTitle: "What we review",
+        buildItems: [
+          "Your brand and communication: what it says and how it lands",
+          "Your customers and how they actually perceive you",
+          "Your competitors and how you compare in the market",
+          "Your digital presence and online visibility",
+          "Your leadership visibility and personal brand strength",
+          "Your employees and how they live and represent the brand",
+        ],
+        outcomeTitle: "What you walk away with",
+        outcome:
+          "A clear picture of what is working, what is confusing, and what is missing with actionable recommendations ranked by priority and impact.",
+      },
+    ],
+  },
+  {
+    id: "fix",
+    eyebrow: "STAGE 2: FIX",
+    title: "Build What Is Missing",
+    intro:
+      "Once you know where the gaps are, we fix them. This is where we build the strategic foundation and brand system your business needs to compete clearly, communicate consistently, and grow with confidence. This stage has two connected services: strategy comes first, development brings it to life.",
+    services: [
+      {
+        title: "Brand Strategy",
+        href: "/services/brand-strategy",
+        description:
+          "If your positioning feels unclear, your teams are not aligned on how to communicate, or your brand is not keeping pace with your growth, you need a stronger strategic foundation. We define how your business should compete, how you should be positioned, and how to communicate in a way that makes people understand you and choose you.",
+        buildTitle: "What we build",
+        buildItems: [
+          "Brand foundation statements: your purpose, vision, mission, values, and pillars",
+          "Positioning and messaging: how you compete and how you communicate it",
+          "Audience definition and competitive differentiation",
+          "A strategic direction your entire team can understand and apply",
+        ],
+        outcomeTitle: "What you walk away with",
+        outcome:
+          "A clear, usable brand strategy that aligns your leadership, guides your teams, and gives your brand a sharp, consistent direction in the market.",
+      },
+      {
+        title: "Brand Development",
+        href: "/services/brand-development",
+        description:
+          "Strategy without identity does not travel. Once the strategic direction is clear, we translate it into a brand your audience can see, feel, and recognize across every touchpoint, every channel, every interaction.",
+        buildTitle: "What we build",
+        buildItems: [
+          "Brand foundation statements brought into visual and verbal form",
+          "Positioning and messaging frameworks your team can use daily",
+          "Logo and visual identity designed to hold together across all applications",
+          "Brand guidelines that keep your brand consistent everywhere",
+          "Website structure, content direction, and copywriting built around your strategy",
+          "Personal brand positioning for leaders so your leadership reinforces your brand",
+          "Crisis communication plans and messaging so you are prepared when it matters",
+        ],
+        outcomeTitle: "What you walk away with",
+        outcome:
+          "A complete brand system that looks, sounds, and feels like one coherent business internally and externally, online and offline.",
+      },
+    ],
+  },
+  {
+    id: "elevate",
+    eyebrow: "STAGE 3: ELEVATE",
+    title: "Make It Visible and Working",
+    intro:
+      "Once you know where the gaps are, we fix them. This is where we build the str is solid, we activate your brand across the channels and moments that matter, so it builds awareness, earns trust, and drives results consistently. If people don't see you clearly, they will choose someone else.",
+    services: [
+      {
+        title: "Brand Activation",
+        href: "/services/brand-activation",
+        description:
+          "We take your brand from strategy and identity into the market through campaigns, content, digital presence, events, and experiences that make your brand real to the people you want to reach.",
+        buildTitle: "What we activate",
+        buildItems: [
+          "Event design and immersive brand experiences where your brand comes to life",
+          "Website and digital presence designed to convert, not just exist",
+          "Content direction and copywriting ensuring what your brand says is clear and consistent",
+          "Personal branding and thought leadership building your leaders' visibility and credibility, notably on LinkedIn",
+        ],
+        outcomeTitle: "What you walk away with",
+        outcome:
+          "A brand that is consistently visible, recognizable, and effective generating awareness, building trust, and contributing directly to business growth.",
+      },
+    ],
+  },
+];
+
+const stageTabs = [
+  {
+    href: "#audit",
+    title: "Audit",
+    description: "Understand where you stand",
+  },
+  {
+    href: "#fix",
+    title: "Fix",
+    description: "Build what is missing",
+  },
+  {
+    href: "#elevate",
+    title: "Elevate",
+    description: "Make it visible and working",
+  },
+];
+
+const additionalCapabilities = [
+  "Marketing planning connecting brand strategy to your quarterly and annual priorities.",
+  "Communication strategy defining what to say, to whom, when, and through which channels.",
+  "Digital campaign direction guiding the strategic layer behind your marketing execution.",
+  "Public relations advisory shaping your narrative and building credibility in the market.",
+  "Activation system design building repeatable frameworks for how your brand shows up at key moments.",
+  "Brand governance support maintaining consistency across teams, partners, and markets over time",
+];
 
 export const metadata = {
-  title: "Services",
+  title: "Brand Strategy, Development & Activation Services in Oman | Proact",
   description:
-    "Explore ProAct services across brand health, strategy, development, and activations built to improve clarity, consistency, and growth.",
+    "Proact offers brand health, strategy, development, and activation services in Oman. We audit your brand, fix what is holding it back, and elevate it so it drives consistent business growth.",
+  keywords: [
+    "Branding services Oman",
+    "Brand strategy Oman",
+    "Brand development Oman",
+    "Branding agency services Oman",
+    "Brand health check Oman",
+    "Brand activation Oman",
+    "Brand positioning Oman",
+    "Communication strategy Oman",
+    "Digital brand visibility Oman",
+    "Corporate branding services Oman",
+  ],
 };
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Services"
-        title="Holistic and comprehensive strategies and executions."
-        description="ProAct connects diagnostics, strategy, development, and activation so the brand can move as one system rather than as disconnected campaigns."
+        eyebrow="OUR SERVICES"
+        title="Brand Services That Drive Business Growth"
+        description="We don't start with deliverables. We start with clarity. Our services follow a simple, connected logic: Audit where you stand, fix what is holding you back, and elevate your brand so it drives consistent results. You can enter at any stage. We connect everything."
         image="/assets/images/page-titles/5.jpg"
         imageAlt="Service strategy background"
       />
@@ -25,69 +160,124 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container split">
           <Reveal className="stack stack--lg">
-            <span className="eyebrow">Strategic and creative services</span>
-            <h2>Built to improve brand clarity, consistency, and traction.</h2>
+            <span className="eyebrow">WHO WE WORK</span>
+            <h2>Brand Services in Oman That Follow How Growth Actually Works</h2>
           </Reveal>
           <Reveal className="stack" delay={120}>
             <p className="lede">
-              ProAct prioritizes brand health because strong activation starts
-              with accurate diagnosis. From there, the work extends into strategy,
-              development, and activation programs that translate brand thinking
-              into growth-oriented action.
+              Most organizations jump straight to activation before they have fixed the
+              foundations. That is why results are inconsistent. Every service we offer
+              connects to the same outcome: a brand that is clear, aligned, and working
+              for your business.
             </p>
             <p>
-              The service model is designed to help businesses differentiate,
-              communicate with more precision, and sustain momentum in competitive
-              market conditions.
+              Most of our clients come to us knowing something is not working but not
+              exactly what. A focused conversation is all it takes to identify where you
+              stand, what is missing, and what the right first step is for your business.
+            </p>
+            <div>
+              <Link className="button button--solid" href="/contacts">
+                Start a Conversation
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+        <div className="container">
+          <Reveal className="stage-tabs" delay={180}>
+            {stageTabs.map((tab) => (
+              <a key={tab.href} className="stage-tab" href={tab.href}>
+                <strong>{tab.title}</strong>
+                <span>{tab.description}</span>
+              </a>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {serviceStages.map((stage, stageIndex) => (
+        <section
+          key={stage.id}
+          id={stage.id}
+          className={`section services-stage${
+            stageIndex % 2 === 0 ? " section--contrast" : ""
+          }`}
+        >
+          <div className="container">
+            <Reveal className="section-heading">
+              <span className="eyebrow">{stage.eyebrow}</span>
+              <h2>{stage.title}</h2>
+              <p>{stage.intro}</p>
+            </Reveal>
+            <div className="services-stage__grid">
+              {stage.services.map((service, index) => (
+                <Reveal key={service.title} className="method-card" delay={index * 90}>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <div className="services-stage__list">
+                    <h4>{service.buildTitle}</h4>
+                    <ul className="check-list">
+                      {service.buildItems.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="services-stage__outcome">
+                    <h4>{service.outcomeTitle}</h4>
+                    <p>{service.outcome}</p>
+                  </div>
+                  <Link className="button button--inline" href={service.href}>
+                    Read more →
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="services-stage__cta" delay={180}>
+              <Link className="button button--solid" href="/contacts">
+                Start a conversation →
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      ))}
+
+      <section className="section">
+        <div className="container">
+          <Reveal className="section-heading section-heading--center">
+            <span className="eyebrow">ADDITIONAL CAPABILITIES</span>
+            <h2>Further support across all three stages</h2>
+            <p>
+              As your brand grows, so do your needs. Beyond the four core services, we
+              bring additional expertise to address specific challenges at any stage.
             </p>
           </Reveal>
+          <div className="value-grid">
+            {additionalCapabilities.map((title, index) => (
+              <Reveal key={title} className="value-card value-card--compact" delay={index * 80}>
+                <p>{title}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section section--contrast">
         <div className="container">
-          <div className="service-grid">
-            {serviceList.map((service, index) => (
-              <Reveal
-                key={service.slug}
-                className={`service-card service-card--${service.theme}`}
-                delay={index * 90}
-              >
-                <div className="service-card__number">
-                  {(index + 1).toString().padStart(2, "0")}
-                </div>
-                <span className="service-card__eyebrow">{service.kicker}</span>
-                <h3>{service.title}</h3>
-                <p>{service.summary}</p>
-                <Link className="button button--inline" href={`/services/${service.slug}`}>
-                  Read more
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">Extended support</span>
-            <h2>Additional capabilities around the core service pillars.</h2>
+          <Reveal className="cta-banner">
+            <div>
+              <span className="eyebrow">LET'S TALK</span>
+              <h2>Your brand should be working harder than it is</h2>
+              <p>
+                If your brand or communication is not delivering the results you expect,
+                there is a reason. We help you find it and fix it starting with one
+                focused conversation.
+              </p>
+            </div>
+            <div className="cta-banner__actions">
+              <Link className="button button--solid" href="/contacts">
+                Start a conversation
+              </Link>
+            </div>
           </Reveal>
-          <div className="value-grid">
-            {[
-              "Marketing planning",
-              "Communication strategy",
-              "Digital campaign direction",
-              "Public relations advisory",
-              "Activation system design",
-              "Brand governance support",
-            ].map((title, index) => (
-              <Reveal key={title} className="value-card value-card--compact" delay={index * 80}>
-                <h3>{title}</h3>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
     </>

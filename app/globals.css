@@ -582,6 +582,7 @@ p {
 .contact-card,
 .insight-card,
 .method-card,
+.case-study-card,
 .approach-card,
 .faq-item,
 .cta-banner,
@@ -638,7 +639,6 @@ p {
 .section-heading {
   display: grid;
   gap: 1rem;
-  max-width: 42rem;
   margin-bottom: 2rem;
 }
 
@@ -655,6 +655,34 @@ p {
   max-width: 58rem;
   margin-inline: auto;
   text-align: center;
+}
+
+.stage-tabs {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 3rem;
+}
+
+.stage-tab {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 7rem;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid rgba(20, 32, 41, 0.08);
+  border-radius: var(--radius);
+  background: #fffaf3;
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.stage-tab strong {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+
+.stage-tab span {
+  color: var(--muted);
 }
 
 .service-grid,
@@ -907,6 +935,7 @@ p {
 .value-card,
 .contact-card,
 .insight-card,
+.case-study-card,
 .method-card,
 .faq-item {
   display: grid;
@@ -993,6 +1022,13 @@ p {
   padding: 1.8rem;
 }
 
+.case-study-card {
+  gap: 1rem;
+  padding: 2rem;
+  border-color: rgba(20, 32, 41, 0.08);
+  background: #fffaf3;
+}
+
 .check-list {
   margin: 1rem 0 0;
   padding: 0;
@@ -1025,6 +1061,47 @@ p {
   gap: 0.9rem;
 }
 
+.services-stage {
+  scroll-margin-top: 7rem;
+}
+
+.services-stage__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.services-stage__grid .method-card:only-child {
+  grid-column: 1 / -1;
+}
+
+.services-stage__grid .method-card {
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+.services-stage__grid .button--inline {
+  justify-self: end;
+  align-self: end;
+  margin-top: auto;
+}
+
+.services-stage__list,
+.services-stage__outcome {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.services-stage__list .check-list {
+  margin-top: 0.35rem;
+}
+
+.services-stage__cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
 .contact-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1044,7 +1121,7 @@ p {
 .site-footer__grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1.3fr 0.8fr 1fr;
+  grid-template-columns: 1.3fr 0.75fr 1fr 1fr;
 }
 
 .site-footer h3 {
@@ -1114,10 +1191,12 @@ p {
 
 @media (max-width: 1080px) {
   .service-grid,
+  .stage-tabs,
   .problem-grid,
   .value-grid,
   .testimonial-grid,
-  .method-grid {
+  .method-grid,
+  .services-stage__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1173,11 +1252,13 @@ p {
   .split,
   .site-footer__grid,
   .problem-grid,
+  .stage-tabs,
   .service-grid,
   .value-grid,
   .approach-grid,
   .testimonial-grid,
   .method-grid,
+  .services-stage__grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
