@@ -19,10 +19,7 @@ export default function SiteFooter() {
             height={56}
             sizes="158px"
           />
-          <p>
-            We craft personalized brand strategies and experiences that connect
-            with the right audience and drive measurable growth.
-          </p>
+          <p>{company.footerTagline}</p>
         </div>
         <div className="stack">
           <h3>Navigation</h3>

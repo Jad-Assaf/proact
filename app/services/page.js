@@ -85,7 +85,7 @@ const serviceStages = [
         title: "Brand Activation",
         href: "/services/brand-activation",
         description:
-          "We take your brand from strategy and identity into the market through campaigns, content, digital presence, events, and experiences that make your brand real to the people you want to reach.",
+          "We take your brand from strategy and identity into the market through digital presence, event design, brand experiences, and activations that make your brand real to the people you want to reach.",
         buildTitle: "What we activate",
         buildItems: [
           "Event design and immersive brand experiences where your brand comes to life",
@@ -119,19 +119,10 @@ const stageTabs = [
   },
 ];
 
-const additionalCapabilities = [
-  "Marketing planning connecting brand strategy to your quarterly and annual priorities.",
-  "Communication strategy defining what to say, to whom, when, and through which channels.",
-  "Digital campaign direction guiding the strategic layer behind your marketing execution.",
-  "Public relations advisory shaping your narrative and building credibility in the market.",
-  "Activation system design building repeatable frameworks for how your brand shows up at key moments.",
-  "Brand governance support maintaining consistency across teams, partners, and markets over time",
-];
-
 export const metadata = {
-  title: "Brand Strategy, Development & Activation Services in Oman | Proact",
+  title: "Brand Strategy, Development & Activation Oman | ProAct Services",
   description:
-    "Proact offers brand health, strategy, development, and activation services in Oman. We audit your brand, fix what is holding it back, and elevate it so it drives consistent business growth.",
+    "ProAct offers brand strategy, brand development, and brand activation services in Oman. Senior-led work that helps businesses grow through clear positioning, consistent identity, and real brand experiences.",
   keywords: [
     "Branding services Oman",
     "Brand strategy Oman",
@@ -146,12 +137,50 @@ export const metadata = {
   ],
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      serviceType: "Brand Health Check",
+      provider: { "@type": "Organization", name: "ProAct" },
+      areaServed: ["Oman", "GCC"],
+      url: "https://proact.om/services/brand-health",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Brand Strategy",
+      provider: { "@type": "Organization", name: "ProAct" },
+      areaServed: ["Oman", "GCC"],
+      url: "https://proact.om/services/brand-strategy",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Brand Development",
+      provider: { "@type": "Organization", name: "ProAct" },
+      areaServed: ["Oman", "GCC"],
+      url: "https://proact.om/services/brand-development",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Brand Activation",
+      provider: { "@type": "Organization", name: "ProAct" },
+      areaServed: ["Oman", "GCC"],
+      url: "https://proact.om/services/brand-activation",
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         eyebrow="OUR SERVICES"
-        title="Brand Services That Drive Business Growth"
+        title="Brand Strategy, Development, and Activation Services in Oman"
         description="We don't start with deliverables. We start with clarity. Our services follow a simple, connected logic: Audit where you stand, fix what is holding you back, and elevate your brand so it drives consistent results. You can enter at any stage. We connect everything."
         image="/assets/images/page-titles/5.jpg"
         imageAlt="Service strategy background"
@@ -161,7 +190,7 @@ export default function ServicesPage() {
         <div className="container split">
           <Reveal className="stack stack--lg">
             <span className="eyebrow">WHO WE WORK</span>
-            <h2>Brand Services in Oman That Follow How Growth Actually Works</h2>
+            <h2>How we make your brand work from diagnosis to activation.</h2>
           </Reveal>
           <Reveal className="stack" delay={120}>
             <p className="lede">
@@ -239,26 +268,6 @@ export default function ServicesPage() {
           </div>
         </section>
       ))}
-
-      <section className="section">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">ADDITIONAL CAPABILITIES</span>
-            <h2>Further support across all three stages</h2>
-            <p>
-              As your brand grows, so do your needs. Beyond the four core services, we
-              bring additional expertise to address specific challenges at any stage.
-            </p>
-          </Reveal>
-          <div className="value-grid">
-            {additionalCapabilities.map((title, index) => (
-              <Reveal key={title} className="value-card value-card--compact" delay={index * 80}>
-                <p>{title}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section section--contrast">
         <div className="container">

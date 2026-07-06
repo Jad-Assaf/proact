@@ -16,6 +16,15 @@ const bodyFont = Manrope({
 const siteName = "ProAct";
 const description =
   "Strategic holistic activations for brands that need sharper positioning, stronger customer connection, and measurable growth.";
+const keywords = [
+  "branding agency Oman",
+  "brand strategy Oman",
+  "brand development Oman",
+  "brand activation Oman",
+  "brand consultancy Muscat",
+  "corporate branding Oman",
+  "brand positioning Oman",
+];
 
 export const metadata = {
   title: {
@@ -23,6 +32,7 @@ export const metadata = {
     template: `%s | ${siteName}`,
   },
   description,
+  keywords,
   icons: {
     icon: "/assets/images/favicon/favicon.png",
   },

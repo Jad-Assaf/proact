@@ -7,10 +7,19 @@ import { clientLogos } from "../content/siteData";
 
 export const metadata = {
   title: {
-    absolute: "ProAct Oman: Personalized Brand Strategies for Lasting Results",
+    absolute: "Branding Agency Oman | Brand Strategy & Growth | Proact",
   },
   description:
-    "ProAct Oman goes beyond boutique agencies. We craft personalized brand strategies & experiences to connect with your audience and achieve real results. Leverage our Oman expertise & international network. Contact us today!",
+    "Proact is a branding agency in Oman helping businesses grow through clear brand strategy, brand development, and brand activation. Senior-led. Built for the Omani market.",
+  keywords: [
+    "branding agency Oman",
+    "brand strategy Oman",
+    "brand development Oman",
+    "brand activation Oman",
+    "brand health check Oman",
+    "brand positioning Oman",
+    "corporate branding Oman",
+  ],
 };
 
 const problemItems = [
@@ -25,16 +34,22 @@ const solutionItems = [
     title: "Understand where you stand",
     description:
       "We identify what is unclear, inconsistent, or not working in how your business is perceived.",
+    href: "/services/brand-health",
+    linkLabel: "Brand Health Check",
   },
   {
     title: "Build what is missing",
     description:
       "We define how your brand should position, communicate, and show up so people understand you and choose you.",
+    href: "/services/brand-strategy",
+    linkLabel: "Brand Strategy",
   },
   {
     title: "Make it visible and working",
     description:
-      "We activate across channels so your brand becomes consistent, recognizable, and effective.",
+      "We design brand experiences and activations so your brand becomes consistent, recognizable, and effective in the real world.",
+    href: "/services/brand-activation",
+    linkLabel: "Brand Activation",
   },
 ];
 
@@ -50,46 +65,46 @@ const partnerItems = [
       "You work directly with experienced professionals on critical decisions.",
   },
   {
-    title: "Results over reporting",
+    title: "Focused on what changes",
     description:
       "We focus on what changes in your business, not just what gets delivered.",
   },
   {
-    title: "Deadline driven",
-    description: "We move fast without losing clarity or direction.",
+    title: "Built for real conditions",
+    description:
+      "Our work is designed to perform in real markets, not just in presentations.",
   },
 ];
 
-const scoreItems = [
-  {
-    title: "Strategic positioning",
-    description:
-      "Know exactly how your business should compete and stand out in your market.",
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ProAct",
+  url: "https://proact.om",
+  description:
+    "Brand strategy, brand development, brand activation, and brand health check services for businesses in Oman and the GCC.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Muscat",
+    addressCountry: "OM",
   },
-  {
-    title: "Consistent communication",
-    description:
-      "Ensure everything you say aligns across teams, channels, and customer touchpoints.",
-  },
-  {
-    title: "Optimized visibility",
-    description:
-      "Be seen by the right audience in the right way, with a clear and focused presence.",
-  },
-  {
-    title: "Recognizable brand",
-    description: "Build a brand people remember, trust, and choose.",
-  },
-  {
-    title: "Established credibility",
-    description:
-      "Strengthen your reputation, leadership presence, and market confidence.",
-  },
-];
+  foundingDate: "2019",
+  areaServed: ["Oman", "GCC"],
+  serviceType: [
+    "Brand Strategy",
+    "Brand Development",
+    "Brand Activation",
+    "Brand Health Check",
+  ],
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <section className="hero hero--home section">
         <div className="hero__backdrop">
           <Image
@@ -110,9 +125,10 @@ export default function HomePage() {
               </h1>
               <p className="hero__copy">
                 Your brand is either driving growth or slowing it down. There
-                is no middle. We fix what is not working in your brand,
-                communication, and visibility so your business can grow with
-                clarity and consistency.
+                is no middle. We align your brand, communication, and
+                visibility so your business grows with clarity and consistency,
+                led by senior strategists who have been doing this in Oman for
+                over a decade.
               </p>
             </RevealOpacity>
             <div className="hero__actions">
@@ -134,12 +150,12 @@ export default function HomePage() {
             <div className="hero__stat-card hero__stat-card--accent">
               <span className="hero__stat-value">10+</span>
               <span className="hero__stat-label">
-                Years helping businesses grow in Oman
+                Years helping businesses in Oman grow
               </span>
             </div>
             <div className="hero__note">
               <span className="hero__stat-value">10+</span>
-              <p>Markets served across GCC and beyond.</p>
+              <p>Markets served across the GCC and beyond.</p>
             </div>
           </div>
         </div>
@@ -149,7 +165,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">The Problem</span>
-            <h2>Where things usually go wrong</h2>
+            <h2>Where growth starts to break down</h2>
           </Reveal>
           <Reveal className="stack stack--lg">
             <p className="lede section-copy-center">
@@ -171,9 +187,19 @@ export default function HomePage() {
               ))}
             </div>
             <p className="section-copy-center">
-              This is where most organizations lose clarity, consistency, and
-              opportunities for growth.
+              Most companies do not realize this until growth slows.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--pt-0">
+        <div className="container">
+          <Reveal className="cta-banner">
+            <p className="lede">If this sounds familiar, the next step is clarity.</p>
+            <Link className="button button--solid" href="/contacts">
+              Start a conversation
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -194,8 +220,9 @@ export default function HomePage() {
             <h2>How we make your brand work</h2>
             <p className="lede">
               Most organizations do not have a marketing problem. They have a
-              clarity problem. We fix it by aligning your brand, communication,
-              and visibility so your business can grow.
+              clarity problem. We fix it by aligning your brand strategy,
+              communication, and visibility so your business grows faster and
+              more consistently.
             </p>
             <div className="feature-list">
               {solutionItems.map((item, index) => (
@@ -204,10 +231,17 @@ export default function HomePage() {
                   <div>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
+                    <Link className="button button--inline" href={item.href}>
+                      {item.linkLabel}
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
+            <p>
+              This is where strategy stops being theory and starts driving
+              performance.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -218,9 +252,10 @@ export default function HomePage() {
             <span className="eyebrow">Your Perfect Partner</span>
             <h2>Why Proact</h2>
             <p>
-              We don&apos;t separate thinking from execution. Every decision we
-              make connects your business objectives to how your brand shows up
-              in the market.
+              A brand only works when it aligns how your business thinks,
+              communicates, and shows up in the market. That is the standard we
+              build for, and we build it with senior professionals who are
+              directly involved from brief to delivery.
             </p>
           </Reveal>
           <div className="value-grid">
@@ -235,40 +270,6 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section section--contrast">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">The Score Model</span>
-            <h2>Brand strategy that drives real business impact</h2>
-            <p>
-              We structure our work around five essential outcomes. Together,
-              they form a system that supports sustainable growth. We call this
-              the SCORE Model.
-            </p>
-          </Reveal>
-          <div className="score-scroll">
-            <div className="approach-grid score-grid">
-              {scoreItems.map((item, index) => (
-                <Reveal
-                  key={item.title}
-                  className="approach-card score-card"
-                  delay={index * 80}
-                >
-                  <span className="approach-card__index">
-                    {(index + 1).toString().padStart(2, "0")}
-                  </span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-          <Reveal className="section-heading section-heading--center">
-            <p>Without this, growth becomes inconsistent and harder to sustain.</p>
-          </Reveal>
         </div>
       </section>
 
@@ -287,6 +288,14 @@ export default function HomePage() {
             </p>
           </Reveal>
           <LogoMarquee logos={clientLogos} />
+          <Reveal className="section-copy-center client-reference">
+            <p>
+              Clients include SalamAir, Atyab Group, Oman Flour Mills, Tea &
+              You, Luma Residences (Muscat Bay), Dhofar Global, Al Maskaan
+              Village, Thyme Restaurant, Royal Opera House Muscat, Omantel, and
+              others across Oman and the GCC.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -294,12 +303,12 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="cta-banner">
             <div>
-              <h2>Start with clarity</h2>
+              <h2>Let&apos;s identify what&apos;s not working</h2>
               <p>
-                If something in your brand or communication is not working, the
-                first step is understanding why. Whether it&apos;s your
-                positioning, visibility, or messaging, we help you identify
-                what needs to change and how to move forward with confidence.
+                If your brand or communication is not delivering the results
+                you expect, there is a reason. We help you understand where you
+                stand, what is missing, and what needs to change. This starts
+                with a focused fruitful conversation.
               </p>
             </div>
             <Link className="button button--solid" href="/contacts">

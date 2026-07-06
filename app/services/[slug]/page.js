@@ -25,6 +25,37 @@ export function generateMetadata({ params }) {
   };
 }
 
+function buildServiceSchema(service) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        serviceType: service.pageName,
+        provider: {
+          "@type": "Organization",
+          name: "ProAct",
+          url: "https://proact.om",
+        },
+        areaServed: "Oman",
+        url: `https://proact.om/services/${service.slug}`,
+        description: service.metaDescription,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: service.faqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
+  };
+}
+
 export default function ServiceDetailPage({ params }) {
   const service = services[params.slug];
 
@@ -34,6 +65,12 @@ export default function ServiceDetailPage({ params }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildServiceSchema(service)),
+        }}
+      />
       <PageHero
         eyebrow={service.heroEyebrow}
         title={service.title}
@@ -122,11 +159,19 @@ export default function ServiceDetailPage({ params }) {
           <Reveal className="case-study-card">
             <span className="eyebrow">{service.caseStudy.eyebrow}</span>
             <h2>{service.caseStudy.title}</h2>
+            {service.caseStudy.details ? (
+              <div className="case-study-card__details">
+                {service.caseStudy.details.map((detail) => (
+                  <h3 key={detail}>{detail}</h3>
+                ))}
+              </div>
+            ) : null}
             <div className="stack">
               {service.caseStudy.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            {service.caseStudy.result ? <h3>{service.caseStudy.result}</h3> : null}
           </Reveal>
         </div>
       </section>

@@ -767,7 +767,7 @@ p {
 .split {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
@@ -902,12 +902,18 @@ p {
 
 .cta-banner {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 1.4rem;
   padding: 2rem;
   border-color: rgba(20, 32, 41, 0.08);
   background: #fffaf3;
+}
+
+.cta-banner > .button,
+.cta-banner__actions {
+  align-self: flex-end;
 }
 
 .page-hero {
@@ -919,7 +925,7 @@ p {
 }
 
 .page-hero__content {
-  max-width: 48rem;
+  /* max-width: 48rem; */
 }
 
 .page-hero__content p {
@@ -960,6 +966,48 @@ p {
 
 .value-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.value-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-proof-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-self: auto;
+  width: min(1160px, calc(100% - 2rem));
+  margin-top: -3rem;
+}
+
+.about-proof-strip .hero__stat-card,
+.about-proof-strip .hero__note {
+  background: #fffaf3;
+  border-color: rgba(20, 32, 41, 0.08);
+}
+
+.about-proof-strip .hero__stat-value {
+  color: var(--text);
+}
+
+.about-proof-strip .hero__stat-label,
+.about-proof-strip .hero__note p {
+  color: var(--muted);
+}
+
+.client-reference {
+  margin-top: 1.25rem;
+}
+
+.case-study-card__details {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.case-study-card__details h3,
+.case-study-card > h3 {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.25;
+  letter-spacing: 0;
 }
 
 .value-card--compact {
@@ -1249,12 +1297,14 @@ p {
   }
 
   .hero__grid,
+  .about-proof-strip,
   .split,
   .site-footer__grid,
   .problem-grid,
   .stage-tabs,
   .service-grid,
   .value-grid,
+  .value-grid--three,
   .approach-grid,
   .testimonial-grid,
   .method-grid,

@@ -101,7 +101,7 @@ export default function SiteHeader() {
           </nav>
           <div className="site-header__actions">
             <Link className="button button--small button--solid" href="/contacts">
-              Start a project
+              Start a conversation
             </Link>
             <button
               type="button"
@@ -155,7 +155,7 @@ export default function SiteHeader() {
         </nav>
         <div className="mobile-sidebar__footer">
           <Link className="button button--small button--solid" href="/contacts">
-            Start a project
+            Start a conversation
           </Link>
         </div>
       </aside>

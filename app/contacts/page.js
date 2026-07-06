@@ -3,9 +3,19 @@ import PageHero from "../../components/PageHero";
 import { company } from "../../content/siteData";
 
 export const metadata = {
-  title: "Contact",
+  title: {
+    absolute: "Contact ProAct | Start a Brand Conversation | Oman",
+  },
   description:
-    "Contact ProAct Oman to discuss brand strategy, rebranding, activation planning, and communication systems aligned to business goals.",
+    "Ready to align your brand with your business goals? Start a conversation with ProAct, Oman's branding agency for strategy, development, and activation.",
+  keywords: [
+    "contact branding agency Oman",
+    "branding agency Oman",
+    "brand strategy Oman",
+    "brand development Oman",
+    "brand activation Oman",
+    "brand consultancy Muscat",
+  ],
 };
 
 export default function ContactsPage() {
@@ -13,8 +23,8 @@ export default function ContactsPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let’s work together."
-        description="If you need a brand reset, a clearer strategic direction, or sharper activations, this is the right place to start."
+        title="Let's figure out where your brand stands."
+        description="If your brand is not delivering what your business needs, this is where we start. One focused conversation. No long process."
         image="/assets/images/cta/1.jpg"
         imageAlt="Contact background"
       />
@@ -29,6 +39,11 @@ export default function ContactsPage() {
               repositioning, growth, differentiation, launch planning, customer
               engagement, or brand consistency.
             </p>
+            <div>
+              <a className="button button--solid" href={company.emailHref}>
+                Send us a message
+              </a>
+            </div>
           </Reveal>
           <div className="contact-grid">
             <Reveal className="contact-card" delay={60}>
@@ -51,16 +66,16 @@ export default function ContactsPage() {
         <div className="container">
           <Reveal className="section-heading">
             <span className="eyebrow">Good fit projects</span>
-            <h2>Work we can move quickly and strategically.</h2>
+            <h2>Projects we&apos;re built for.</h2>
           </Reveal>
           <div className="value-grid">
             {[
               "New brand launches",
               "Rebrands and brand refreshes",
               "Brand health audits",
-              "Integrated activation programs",
-              "Social and PR planning",
-              "Audience-focused communication systems",
+              "Brand activation and event experiences",
+              "Brand strategy and positioning",
+              "Brand identity and development",
             ].map((item, index) => (
               <Reveal key={item} className="value-card value-card--compact" delay={index * 75}>
                 <h3>{item}</h3>
