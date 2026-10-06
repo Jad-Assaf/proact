@@ -1,14 +1,13 @@
+import { pageMetadata, webPageSchema } from "../../lib/seo";
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
 import PageHero from "../../components/PageHero";
 import { beliefs, company, faqs } from "../../content/siteData";
 
-export const metadata = {
-  title: {
-    absolute: "About ProAct | Branding Agency in Oman | Brand Strategy & Activation",
-  },
-  description:
-    "ProAct is a branding agency in Oman with 75+ years of combined experience in brand strategy, brand development, and brand activation. We help businesses grow through clear positioning and consistent execution.",
+export const metadata = pageMetadata({
+  title: "About ProAct | Brand Strategists in Oman",
+  description: "Meet ProAct, a branding agency in Oman with 75+ years of combined experience in brand strategy, development, and activation.",
+  path: "/about",
   keywords: [
     "branding agency Oman",
     "brand strategy Oman",
@@ -18,7 +17,7 @@ export const metadata = {
     "corporate branding Oman",
     "brand positioning Oman",
   ],
-};
+});
 
 const journeyCards = [
   {
@@ -99,24 +98,7 @@ const ecosystem = [
 const aboutSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      name: "ProAct",
-      url: "https://proact.om",
-      foundingDate: "2019",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: company.address.slice(0, 2).join(", "),
-        addressLocality: "Muscat",
-        addressCountry: "OM",
-      },
-    },
-    {
-      "@type": "AboutPage",
-      name: "About ProAct",
-      url: "https://proact.om/about",
-      description: metadata.description,
-    },
+    webPageSchema({ path: "/about", name: "About ProAct", description: metadata.description, type: "AboutPage" }),
     {
       "@type": "FAQPage",
       mainEntity: faqs.map((item) => ({

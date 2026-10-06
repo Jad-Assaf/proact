@@ -2,6 +2,8 @@ import { Manrope, Syne } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import StructuredData from "../components/StructuredData";
+import { organizationSchema, websiteSchema } from "../lib/seo";
 
 const headingFont = Syne({
   subsets: ["latin"],
@@ -43,6 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+        <StructuredData data={{ "@context": "https://schema.org", "@graph": [organizationSchema, websiteSchema] }} />
         <div className="site-shell">
           <div className="site-shell__glow site-shell__glow--one" />
           <div className="site-shell__glow site-shell__glow--two" />

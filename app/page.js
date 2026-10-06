@@ -1,3 +1,4 @@
+import { pageMetadata, webPageSchema } from "../lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../components/Reveal";
@@ -5,12 +6,10 @@ import RevealOpacity from "../components/RevealOpacity";
 import LogoMarquee from "../components/LogoMarquee";
 import { clientLogos } from "../content/siteData";
 
-export const metadata = {
-  title: {
-    absolute: "Branding Agency Oman | Brand Strategy & Growth | ProAct",
-  },
-  description:
-    "Proact is a branding agency in Oman helping businesses grow through clear brand strategy, brand development, and brand activation. Senior-led. Built for the Omani market.",
+export const metadata = pageMetadata({
+  title: "Branding Agency in Oman | ProAct",
+  description: "ProAct helps businesses in Oman grow through clear brand strategy, brand development, and brand activation. Senior-led work for the Omani market.",
+  path: "/",
   keywords: [
     "branding agency Oman",
     "brand strategy Oman",
@@ -20,7 +19,7 @@ export const metadata = {
     "brand positioning Oman",
     "corporate branding Oman",
   ],
-};
+});
 
 const problemItems = [
   "Your marketing is active, but not delivering results.",
@@ -76,26 +75,9 @@ const partnerItems = [
   },
 ];
 
-const organizationSchema = {
+const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "ProAct",
-  url: "https://proact.om",
-  description:
-    "Brand strategy, brand development, brand activation, and brand health check services for businesses in Oman and the GCC.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Muscat",
-    addressCountry: "OM",
-  },
-  foundingDate: "2019",
-  areaServed: ["Oman", "GCC"],
-  serviceType: [
-    "Brand Strategy",
-    "Brand Development",
-    "Brand Activation",
-    "Brand Health Check",
-  ],
+  ...webPageSchema({ path: "/", name: "Branding Agency in Oman | ProAct", description: metadata.description }),
 };
 
 export default function HomePage() {
@@ -103,7 +85,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
       <section className="hero hero--home section">
         <div className="hero__backdrop">

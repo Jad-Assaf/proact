@@ -80,12 +80,12 @@ const nextConfig = {
       },
       {
         source: "/services-brand-activations",
-        destination: "/services/brand-activations",
+        destination: "/services/brand-activation",
         permanent: true,
       },
       {
         source: "/services-brand-activations.html",
-        destination: "/services/brand-activations",
+        destination: "/services/brand-activation",
         permanent: true,
       },
     ];

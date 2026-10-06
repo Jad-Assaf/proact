@@ -30,9 +30,9 @@ export const services = {
     heroEyebrow: "AUDIT YOUR BRAND",
     summary:
       "Most businesses discover their brand is not working the way they thought after they have already invested. A Brand Health Check tells you exactly where you stand before you spend another penny.",
-    metaTitle: "Brand Health Check Oman | Brand Audit & Diagnosis | ProAct",
+    metaTitle: "Brand Health Check Oman | Brand Audit | ProAct",
     metaDescription:
-      "ProAct conducts brand health checks for businesses in Oman diagnosing brand awareness, customer perception, positioning gaps, and competitive standing before you invest further. Research-backed. Actionable.",
+      "Find out how your brand performs with ProAct’s Brand Health Check in Oman. Get research-led insights and clear recommendations before investing further.",
     keywords: [
       "Brand health check Oman",
       "Brand audit Oman",
@@ -181,9 +181,9 @@ export const services = {
     heroEyebrow: "BUILD YOUR BRAND",
     summary:
       "If your teams are not aligned on how to communicate, your positioning feels unclear, or your brand is not keeping pace with your growth, the problem is not your marketing. It is your strategy.",
-    metaTitle: "Brand Strategy in Oman | Brand Positioning & Messaging | ProAct",
+    metaTitle: "Brand Strategy Oman | Positioning & Messaging | ProAct",
     metaDescription:
-      "ProAct helps businesses in Oman build clear brand strategies that align leadership, guide teams, and drive consistent growth. Strategy that works beyond the presentation.",
+      "Build a clear brand strategy with ProAct in Oman. Align leadership, define your positioning, and give your teams practical messaging tools.",
     keywords: [
       "Brand strategy Oman",
       "Brand positioning Oman",
@@ -349,9 +349,9 @@ export const services = {
     heroEyebrow: "BUILD YOUR BRAND",
     summary:
       "Strategy without identity does not travel. Once you know where your brand is going, we build the system that gets it there: a complete brand identity your audience can see, feel, and recognize across every touchpoint, every channel, every interaction.",
-    metaTitle: "Brand Development in Oman | Visual Identity & Brand Guidelines | ProAct",
+    metaTitle: "Brand Development Oman | Visual Identity | ProAct",
     metaDescription:
-      "ProAct builds brand identities in Oman that hold together across every touchpoint from visual identity and guidelines to website content, leadership positioning and crisis communication.",
+      "Turn your strategy into a consistent brand identity with ProAct in Oman. We build visual identities, brand guidelines, messaging, and content.",
     keywords: [
       "Brand development Oman",
       "Brand identity Oman",
@@ -504,9 +504,9 @@ export const services = {
     heroEyebrow: "MAKE IT VISIBLE",
     summary:
       "A strong brand that no one sees is not working. Once your foundation is solid, we take your brand into the market through the experiences that build awareness, earn trust, and drive results over time. If people don't see you clearly, they will choose someone else.",
-    metaTitle: "Brand Activation in Oman | Event Design & Brand Experiences | ProAct",
+    metaTitle: "Brand Activation Oman | Events & Experiences | ProAct",
     metaDescription:
-      "ProAct activates brands in Oman through event design, brand experiences, website development, storytelling, and personal brand visibility, so your brand shows up clearly where it matters. Learn more.",
+      "Bring your brand to life with ProAct in Oman through launch events, immersive experiences, digital presence, and leadership visibility.",
     keywords: [
       "Brand activation Oman",
       "Brand marketing Oman",

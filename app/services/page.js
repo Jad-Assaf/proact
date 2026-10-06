@@ -1,3 +1,5 @@
+import { services } from "../../content/siteData";
+import { pageMetadata, webPageSchema, serviceSchema } from "../../lib/seo";
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
 import PageHero from "../../components/PageHero";
@@ -119,10 +121,10 @@ const stageTabs = [
   },
 ];
 
-export const metadata = {
-  title: "Brand Strategy, Development & Activation Oman | ProAct Services",
-  description:
-    "ProAct offers brand strategy, brand development, and brand activation services in Oman. Senior-led work that helps businesses grow through clear positioning, consistent identity, and real brand experiences.",
+export const metadata = pageMetadata({
+  title: "Branding Services in Oman | ProAct",
+  description: "Explore ProAct’s brand health checks, strategy, development, and activation services in Oman. Senior-led work built around your business goals.",
+  path: "/services",
   keywords: [
     "Branding services Oman",
     "Brand strategy Oman",
@@ -135,39 +137,13 @@ export const metadata = {
     "Digital brand visibility Oman",
     "Corporate branding services Oman",
   ],
-};
+});
 
-const serviceSchema = {
+const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Service",
-      serviceType: "Brand Health Check",
-      provider: { "@type": "Organization", name: "ProAct" },
-      areaServed: ["Oman", "GCC"],
-      url: "https://proact.om/services/brand-health",
-    },
-    {
-      "@type": "Service",
-      serviceType: "Brand Strategy",
-      provider: { "@type": "Organization", name: "ProAct" },
-      areaServed: ["Oman", "GCC"],
-      url: "https://proact.om/services/brand-strategy",
-    },
-    {
-      "@type": "Service",
-      serviceType: "Brand Development",
-      provider: { "@type": "Organization", name: "ProAct" },
-      areaServed: ["Oman", "GCC"],
-      url: "https://proact.om/services/brand-development",
-    },
-    {
-      "@type": "Service",
-      serviceType: "Brand Activation",
-      provider: { "@type": "Organization", name: "ProAct" },
-      areaServed: ["Oman", "GCC"],
-      url: "https://proact.om/services/brand-activation",
-    },
+    webPageSchema({ path: "/services", name: "Branding Services in Oman", description: metadata.description, type: "CollectionPage" }),
+    ...Object.values(services).map(serviceSchema),
   ],
 };
 
@@ -176,7 +152,7 @@ export default function ServicesPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       <PageHero
         eyebrow="OUR SERVICES"

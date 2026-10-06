@@ -1,13 +1,13 @@
+import { pageMetadata, webPageSchema } from "../../lib/seo";
 import Reveal from "../../components/Reveal";
 import PageHero from "../../components/PageHero";
 import { company } from "../../content/siteData";
+import StructuredData from "../../components/StructuredData";
 
-export const metadata = {
-  title: {
-    absolute: "Contact ProAct | Start a Brand Conversation | Oman",
-  },
-  description:
-    "Ready to align your brand with your business goals? Start a conversation with ProAct, Oman's branding agency for strategy, development, and activation.",
+export const metadata = pageMetadata({
+  title: "Contact ProAct | Branding Agency in Muscat, Oman",
+  description: "Contact ProAct in Muscat, Oman to discuss your brand strategy, identity, or activation needs. Start with a focused conversation about your business.",
+  path: "/contacts",
   keywords: [
     "contact branding agency Oman",
     "branding agency Oman",
@@ -16,11 +16,12 @@ export const metadata = {
     "brand activation Oman",
     "brand consultancy Muscat",
   ],
-};
+});
 
 export default function ContactsPage() {
   return (
     <>
+      <StructuredData data={{ "@context": "https://schema.org", ...webPageSchema({ path: "/contacts", name: "Contact ProAct", description: metadata.description, type: "ContactPage" }) }} />
       <PageHero
         eyebrow="Contact"
         title="Let's figure out where your brand stands."

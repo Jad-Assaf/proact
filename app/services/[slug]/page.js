@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Reveal from "../../../components/Reveal";
 import PageHero from "../../../components/PageHero";
 import { services } from "../../../content/siteData";
+import { pageMetadata, webPageSchema, serviceSchema } from "../../../lib/seo";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 
 const serviceList = Object.values(services);
 export const dynamicParams = false;
@@ -11,36 +13,28 @@ export function generateStaticParams() {
   return serviceList.map((service) => ({ slug: service.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const service = services[params.slug];
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = services[slug];
 
   if (!service) {
     return {};
   }
 
-  return {
+  return pageMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
     keywords: service.keywords,
-  };
+    path: `/services/${service.slug}`,
+  });
 }
 
 function buildServiceSchema(service) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Service",
-        serviceType: service.pageName,
-        provider: {
-          "@type": "Organization",
-          name: "ProAct",
-          url: "https://proact.om",
-        },
-        areaServed: "Oman",
-        url: `https://proact.om/services/${service.slug}`,
-        description: service.metaDescription,
-      },
+      webPageSchema({ path: `/services/${service.slug}`, name: service.metaTitle, description: service.metaDescription }),
+      serviceSchema(service),
       {
         "@type": "FAQPage",
         mainEntity: service.faqs.map((item) => ({
@@ -56,8 +50,9 @@ function buildServiceSchema(service) {
   };
 }
 
-export default function ServiceDetailPage({ params }) {
-  const service = services[params.slug];
+export default async function ServiceDetailPage({ params }) {
+  const { slug } = await params;
+  const service = services[slug];
 
   if (!service) {
     notFound();
@@ -78,6 +73,11 @@ export default function ServiceDetailPage({ params }) {
         image="/assets/images/background/1.jpg"
         imageAlt={`${service.title} background`}
       />
+      <Breadcrumbs items={[
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: service.pageName, href: `/services/${service.slug}` },
+      ]} />
 
       <section className="section">
         <div className="container split">
