@@ -79,7 +79,7 @@ const serviceStages = [
     eyebrow: "STAGE 3: ELEVATE",
     title: "Make It Visible and Working",
     intro:
-      "Once you know where the gaps are, we fix them. This is where we build the str is solid, we activate your brand across the channels and moments that matter, so it builds awareness, earns trust, and drives results consistently. If people don't see you clearly, they will choose someone else.",
+      "Once your foundation is solid, we activate your brand across the channels and moments that matter, so it builds awareness, earns trust, and drives results consistently. If people don't see you clearly, they will choose someone else.",
     services: [
       {
         title: "Brand Activation",
@@ -189,7 +189,7 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container split">
           <Reveal className="stack stack--lg">
-            <span className="eyebrow">WHO WE WORK</span>
+            <span className="eyebrow">HOW WE WORK</span>
             <h2>How we make your brand work from diagnosis to activation.</h2>
           </Reveal>
           <Reveal className="stack" delay={120}>

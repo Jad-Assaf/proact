@@ -7,7 +7,7 @@ import { clientLogos } from "../content/siteData";
 
 export const metadata = {
   title: {
-    absolute: "Branding Agency Oman | Brand Strategy & Growth | Proact",
+    absolute: "Branding Agency Oman | Brand Strategy & Growth | ProAct",
   },
   description:
     "Proact is a branding agency in Oman helping businesses grow through clear brand strategy, brand development, and brand activation. Senior-led. Built for the Omani market.",
@@ -40,7 +40,7 @@ const solutionItems = [
   {
     title: "Build what is missing",
     description:
-      "We define how your brand should position, communicate, and show up so people understand you and choose you.",
+      "We define how your brand should be positioned, communicate, and show up so people understand you and choose you.",
     href: "/services/brand-strategy",
     linkLabel: "Brand Strategy",
   },
@@ -119,7 +119,7 @@ export default function HomePage() {
         <div className="container hero__grid">
           <div className="stack stack--lg">
             <RevealOpacity className="stack stack--lg">
-              <span className="eyebrow">Branding Agency in Oman</span>
+              <span className="eyebrow">Built for growth</span>
               <h1 className="hero__title">
                 Branding Agency in Oman for Businesses That Want to Grow
               </h1>
@@ -250,7 +250,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Your Perfect Partner</span>
-            <h2>Why Proact</h2>
+            <h2>Why ProAct</h2>
             <p>
               A brand only works when it aligns how your business thinks,
               communicates, and shows up in the market. That is the standard we
@@ -308,7 +308,7 @@ export default function HomePage() {
                 If your brand or communication is not delivering the results
                 you expect, there is a reason. We help you understand where you
                 stand, what is missing, and what needs to change. This starts
-                with a focused fruitful conversation.
+                with a focused, fruitful conversation.
               </p>
             </div>
             <Link className="button button--solid" href="/contacts">

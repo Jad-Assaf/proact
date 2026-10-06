@@ -30,7 +30,7 @@ const journeyCards = [
   {
     title: "02 Build what is missing",
     body:
-      "Brand Strategy & Brand Development - We define how your brand should position, communicate, and look. We build the foundation and the tools your team can actually use.",
+      "Brand Strategy & Brand Development - We define how your brand should be positioned, communicate, and look. We build the foundation and the tools your team can actually use.",
     href: "/services/brand-strategy",
   },
   {
@@ -162,7 +162,7 @@ export default function AboutPage() {
           </div>
           <div className="hero__note">
             <span className="hero__stat-value">10+</span>
-            <p>Markets served across GCC and beyond</p>
+            <p>Markets served across the GCC and beyond</p>
           </div>
         </div>
       </section>

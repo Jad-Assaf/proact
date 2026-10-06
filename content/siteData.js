@@ -94,14 +94,14 @@ export const services = {
     },
     takeaway: {
       eyebrow: "WHAT YOU GET",
-      title: "What you get",
+      title: "What the audit delivers",
       body:
         "A clear, prioritized report that tells you exactly what is working, what is confusing, and what is missing with specific recommendations you can act on immediately.",
       points: [
         "A clear picture of how your brand is performing in the market",
         "A mapped list of what is working, what is confusing, and what is missing",
         "A competitive context showing where your brand stands relative to others",
-        "A prioritised set of recommendations your team can act on immediately",
+        "A prioritized set of recommendations your team can act on immediately",
       ],
     },
     process: [
@@ -113,7 +113,7 @@ export const services = {
       {
         title: "Step 2: Research and review",
         description:
-          "We conduct the full diagnostic combining desk research, stakeholder interviews, exisiting and potential customer surveys, social listening, competitor analysis, and digital audit.",
+          "We conduct the full diagnostic combining desk research, stakeholder interviews, existing and potential customer surveys, social listening, competitor analysis, and digital audit.",
       },
       {
         title: "Step 3: Analysis",
@@ -128,9 +128,9 @@ export const services = {
     ],
     caseStudy: {
       eyebrow: "CASE STUDY",
-      title: "How we did it for Salam Air",
+      title: "How we did it for SalamAir",
       paragraphs: [
-        "Salam Air was experiencing fast growth but had limited visibility on how customers were actually perceiving the brand across its markets.",
+        "SalamAir was experiencing fast growth but had limited visibility on how customers were actually perceiving the brand across its markets.",
         "We conducted a full Brand Health Check including quantitative surveys across five cities in the GCC and Southeast Asia, management interviews, focus groups, social media listening, website audit, and a competitive comparison.",
         "The result was a clear picture of where the brand was strong, where perception gaps existed, and a prioritized list of quick wins and long-term recommendations that gave the leadership team a clear direction forward.",
       ],
@@ -180,10 +180,10 @@ export const services = {
     theme: "gold",
     heroEyebrow: "BUILD YOUR BRAND",
     summary:
-      "If your teams are not aligned on how to communicate, your positioning feels unclear, or your brand is not keeping pace with your growth; the problem is not your marketing. It is your strategy.",
+      "If your teams are not aligned on how to communicate, your positioning feels unclear, or your brand is not keeping pace with your growth, the problem is not your marketing. It is your strategy.",
     metaTitle: "Brand Strategy in Oman | Brand Positioning & Messaging | ProAct",
     metaDescription:
-      "Proact helps businesses in Oman build clear brand strategies that align leadership, guide teams, and drive consistent growth. Strategy that works beyond the presentation.",
+      "ProAct helps businesses in Oman build clear brand strategies that align leadership, guide teams, and drive consistent growth. Strategy that works beyond the presentation.",
     keywords: [
       "Brand strategy Oman",
       "Brand positioning Oman",
@@ -282,7 +282,7 @@ export const services = {
           "We build the full strategic framework, including positioning, messaging, audience definition, and brand foundation, all grounded in your business reality, not generic templates.",
       },
       {
-        title: "Step 4:Alignment session",
+        title: "Step 4: Alignment session",
         description:
           "We present the strategy in a working session with your leadership team, not just a delivery, but a conversation that ensures full alignment before anything moves to execution.",
       },
@@ -351,7 +351,7 @@ export const services = {
       "Strategy without identity does not travel. Once you know where your brand is going, we build the system that gets it there: a complete brand identity your audience can see, feel, and recognize across every touchpoint, every channel, every interaction.",
     metaTitle: "Brand Development in Oman | Visual Identity & Brand Guidelines | ProAct",
     metaDescription:
-      "Proact builds brand identities in Oman that hold together across every touchpoint from visual identity and guidelines to website content, leadership positioning and crisis communication.",
+      "ProAct builds brand identities in Oman that hold together across every touchpoint from visual identity and guidelines to website content, leadership positioning and crisis communication.",
     keywords: [
       "Brand development Oman",
       "Brand identity Oman",
@@ -514,7 +514,6 @@ export const services = {
       "Event branding Oman",
       "Thought leadership Oman",
       "Brand experience Oman",
-      "Event branding Oman",
       "Brand launch Oman",
       "Personal branding Oman",
     ],
@@ -739,17 +738,17 @@ export const faqs = [
   {
     question: "What types of businesses do you work with?",
     answer:
-      "We work with growing businesses and established organisations across sectors including aviation, food and beverage, real estate, hospitality, education, healthcare, and government-adjacent entities. The common factor is a leadership team that is serious about using their brand as a driver of business performance.",
+      "We work with growing businesses and established organizations across sectors including aviation, food and beverage, real estate, hospitality, education, healthcare, and government-adjacent entities. The common factor is a leadership team that is serious about using their brand as a driver of business performance.",
   },
   {
     question: "Do you handle rebranding?",
     answer:
-      "Yes. Rebranding is one of our most common engagements. It typically starts with a Brand Health Check to understand the current state, followed by Brand Strategy and Brand Development to build the updated direction and identity. We have led full rebrandings for organisations including Atyab Group / Oman Flour Mills and Dhofar Global.",
+      "Yes. Rebranding is one of our most common engagements. It typically starts with a Brand Health Check to understand the current state, followed by Brand Strategy and Brand Development to build the updated direction and identity. We have led full rebrandings for organizations including Atyab Group / Oman Flour Mills and Dhofar Global.",
   },
   {
     question: "Do you run campaigns or manage social media?",
     answer:
-      "No. ProAct does not manage campaigns, social media accounts, or paid media. Our work is strategic and structural: we define how your brand should position, communicate, and show up, and we build the tools and experiences to make that happen. Execution of ongoing content and media sits outside our scope.",
+      "No. ProAct does not manage campaigns, social media accounts, or paid media. Our work is strategic and structural: we define how your brand should be positioned, communicate, and show up, and we build the tools and experiences to make that happen. Execution of ongoing content and media sits outside our scope.",
   },
   {
     question: "Where do I start if I am not sure what I need?",
