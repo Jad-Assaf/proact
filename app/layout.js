@@ -35,6 +35,9 @@ export const metadata = {
   },
   description,
   keywords,
+  verification: {
+    google: "-2ObHjOWfgPqxFbrsvGKZCORNHfh3l6BpfdQq_4Z3N8",
+  },
   icons: {
     icon: "/assets/images/favicon/favicon.png",
   },
